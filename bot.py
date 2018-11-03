@@ -129,7 +129,7 @@ async def bug(ctx, *, message=None):
 @bot.listen()
 async def on_message(message : discord.Message):
     if bot.user.mentioned_in(message):
-        await message.channel.send(':sleeping: | You woke me up :( . My prefix is `p!` , for a list of commands type `p!help`', delete_after=10)
+        await message.channel.send(':sleeping: | You woke me up :( . My prefix is `b!` , for a list of commands type `b!help`', delete_after=10)
 
 @bot.listen()
 async def on_command_error(ctx, error):
@@ -307,9 +307,9 @@ async def presence():
                 if u.bot == False:
                     a = a + 1
 
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s servers | p!help' % (len(bot.guilds))))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s servers | b!help' % (len(bot.guilds))))
         await sleep(30)
-        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s users | p!help' % (len(bot.users))))
+        await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='%s users | b!help' % (len(bot.users))))
         await sleep(30)
  
 
