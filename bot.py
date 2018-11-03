@@ -96,32 +96,16 @@ async def help(ctx):
     em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
     em.set_author(name="Flex Help")
     em.add_field(name="Funny", value='`say,ping,cat,avatar,8ball`', inline=False)
-    em.add_field(name="Info", value='`playerinfo,serverinfo,botinfo,lenny,respect,support`', inline=False)
+    em.add_field(name="Info", value='`playerinfo,serverinfo,botinfo,lenny,respect`', inline=False)
     em.add_field(name="Moderation", value='`kick,ban,purge`', inline=False)
     em.add_field(name="Music", value='`play,stop,queue,skip,pause,resume,join`', inline=False)
     em.add_field(name="More", value='`feedback,bug`', inline=False)
     em.set_thumbnail(url=ctx.me.avatar_url)
     msg = await ctx.send(embed=em)
-  
-
-@bot.command()
-async def support(ctx):
-    """support"""
-    em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
-    em.add_field(name=' Support Server', value='[Join ]( https://discord.gg/CYr83P6 )')
-    em.set_thumbnail(url=ctx.me.avatar_url)
-    msg = await ctx.send(embed=em)
 
 
 
 
-@bot.command()
-async def invite(ctx):
-        """invite"""
-        em = discord.Embed(title="".format(ctx.guild.name), description="", color=discord.Colour.blue())
-        em.add_field(name=' Invite Flex In your server!', value='[Invite ]( https://discordapp.com/api/oauth2/authorize?client_id=458912845438910464&permissions=201603158&scope=bot )')
-        em.set_thumbnail(url=ctx.me.avatar_url)
-        msg = await ctx.send(embed=em)
 
 @bot.command()
 async def feedback(ctx, *, message=None):
@@ -145,7 +129,7 @@ async def bug(ctx, *, message=None):
 @bot.listen()
 async def on_message(message : discord.Message):
     if bot.user.mentioned_in(message):
-        await message.channel.send(':sleeping: | You woke me up :( . My prefix is `f.` , for a list of commands type `f.help`', delete_after=10)
+        await message.channel.send(':sleeping: | You woke me up :( . My prefix is `p!` , for a list of commands type `p!help`', delete_after=10)
 
 @bot.listen()
 async def on_command_error(ctx, error):
